@@ -21,7 +21,7 @@ const getStat = async (key) => {
 const createStat = async (stat) => {
     try {
         const newId = await db.one(
-            "INSERT INTO stats (alias, lastname, dob, adult) VALUES($1, $2, $3, $4) RETURNING *", [id.alias, id.lastname, id.dob, id.adult]
+            "INSERT INTO stats (alias, lastname, dob, adult) VALUES($1, $2, $3, $4) RETURNING *", [stat.alias, stat.lastname, stat.dob, stat.adult]
         );
         return newId
     } catch (error) {
